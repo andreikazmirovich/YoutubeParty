@@ -1,0 +1,23 @@
+@import '../../../assets/variables';
+
+:host {
+  display: block;
+
+  .party-player-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .party-player {
+      height: 100%;
+      width: 100%;
+    }
+
+    .party-sync-button {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      box-shadow: 0px 0px 20px 15px $party-black;
+    }
+  }
+}

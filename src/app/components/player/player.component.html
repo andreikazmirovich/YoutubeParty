@@ -1,0 +1,10 @@
+<div *ngIf="videoId" class="party-player-container">
+  <iframe class="party-player"
+    frameborder="0"
+    [src]="getVideoId()"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <button class="party-sync-button" mat-raised-button color="accent">Синхронізувати</button>
+</div>

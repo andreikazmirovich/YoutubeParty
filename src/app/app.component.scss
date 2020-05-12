@@ -1,0 +1,17 @@
+@import '../assets/variables';
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  background-color: $party-black;
+
+  party-player {
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+  }
+}
