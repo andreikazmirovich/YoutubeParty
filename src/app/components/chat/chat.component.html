@@ -1,0 +1,32 @@
+<mat-accordion class="party-chat">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Chat
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>chat</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div #chatBody *ngIf="messages.length > 0; else noMessage" class="party-chat-messages">
+      <div class="party-chat-message"
+        *ngFor="let message of messages; let i = index"
+        [ngClass]="{'party-chat-message-recieved': isMessageFromAnotherUser(message)}">
+        <div *ngIf="!isPreviouseMessageFromTheSameUse(i)" class="party-chat-message-username">{{message.user}}</div>
+        <div class="party-chat-message-text">{{message.text}}</div>
+      </div>
+    </div>
+    <ng-template #noMessage>
+      <div class="party-chat-no-messages">{{noMessageText}}</div>
+    </ng-template>
+    <mat-action-row>
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <input matInput 
+          autocomplete="off"
+          [(ngModel)]="chatMessage"
+          (keyup.enter)="sendMessage()">
+      </mat-form-field>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
