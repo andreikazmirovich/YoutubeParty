@@ -1,0 +1,98 @@
+@import '~@angular/material/theming';
+@import '../../../styles';
+@import '../../../assets/variables';
+
+.party-chat {
+  mat-expansion-panel {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+
+    mat-expansion-panel-header {
+      background-color: mat-color($theme-primary);
+      border-radius: 4px 4px 0 0;
+      user-select: none;
+
+      &:hover,
+      &:focus {
+        background-color: mat-color($theme-primary) !important;
+      }
+
+      .mat-expansion-panel-header-title,
+      .mat-expansion-panel-header-description {
+        color: $party-white;
+      }
+
+      mat-panel-description {
+        mat-icon {
+          position: absolute;
+          right: 24px;
+        }
+      }
+    }
+
+    .mat-expansion-panel-body {
+      overflow: auto;
+      height: 250px;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .party-chat-messages {
+        .party-chat-message {
+          max-width: 80%;
+          margin: 1px 0;
+          float: right;
+          clear: both;
+
+          .party-chat-message-username {
+            color: $party-grey;
+            text-align: right;
+            font-size: 10px;
+            line-height: 12px;
+            padding: 0 2px;
+            margin-top: 8px;
+            user-select: none;
+          }
+
+          .party-chat-message-text {
+            background-color: mat-color($theme-primary, lighter);
+            padding: 2px 10px;
+            color: $party-white;
+            border-radius: 5px;
+            font-weight: 100;
+            line-height: 21px;
+          }
+
+          &.party-chat-message-recieved {
+            float: left;
+
+            .party-chat-message-username {
+              text-align: left;
+            }
+
+            .party-chat-message-text {
+              background-color: mat-color($theme-primary);
+            }
+          }
+        }
+      }
+
+      .party-chat-no-messages {
+        color: $party-grey;
+        font-weight: lighter;
+        font-style: italic;
+        text-align: center;
+        padding-top: 100px;
+      }
+    }
+
+    mat-action-row {
+      padding: 16px 24px;
+
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+}
