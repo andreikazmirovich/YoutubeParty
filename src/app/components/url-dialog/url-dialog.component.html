@@ -1,0 +1,13 @@
+<h1 matDialogTitle>YouTube Video Url</h1>
+
+<mat-form-field class="example-full-width">
+  <mat-label>Url</mat-label>
+  <input #urlInput matInput>
+</mat-form-field>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button
+    color="primary"
+    [disabled]="!urlInput.value"
+    (click)="openVideo(urlInput.value)">Open</button>
+</mat-dialog-actions>
